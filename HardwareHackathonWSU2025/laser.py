@@ -11,9 +11,9 @@ GPIO.setup(LASER_PIN, GPIO.OUT)
 
 def motion_detected(channel):
     print("Motion detected! Shooting laser.")
-    GPIO.output(LASER_PIN, GPIO.HIGH)
+    GPIO.output(LASER_PIN, GPIO.HIGH) # Turns laser on
     time.sleep(0.25)  # Laser on for 0.25 second
-    GPIO.output(LASER_PIN, GPIO.LOW)
+    GPIO.output(LASER_PIN, GPIO.LOW) # Turns laser off
 
 # Event detection
 GPIO.add_event_detect(PIR_PIN, GPIO.RISING, callback=motion_detected)
