@@ -1,0 +1,36 @@
+// Define the pins
+//#define PIR_PIN 13
+#define LASER_PIN 12
+
+void setup() {
+  // Initialize serial communication
+  Serial.begin(115200);
+  
+  // Set PIR_PIN as input
+  //pinMode(PIR_PIN, INPUT);
+  
+  // Set LASER_PIN as output
+  pinMode(LASER_PIN, OUTPUT);
+  
+  // Ensure the laser is off initially
+  digitalWrite(LASER_PIN, LOW);
+}
+
+void loop() {
+  // Read the PIR sensor
+  //int motionDetected = digitalRead(PIR_PIN);
+  
+  //if (motionDetected == HIGH) {
+    // Motion detected, turn on the laser
+    Serial.println("Motion detected! Laser ON.");
+    digitalWrite(LASER_PIN, HIGH);
+  //} else {
+    // No motion, turn off the laser
+    delay(100); // delay laser for blinking laser
+    Serial.println("No motion. Laser OFF.");
+    digitalWrite(LASER_PIN, LOW);
+  //}
+  
+  // Small delay to avoid bouncing
+  //delay(100);
+}
