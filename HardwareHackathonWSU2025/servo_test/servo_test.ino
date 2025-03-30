@@ -15,7 +15,7 @@ void loop() {
     // if(x == 90) delay(1000); // delay for 1000ms at motion detection
     // in steps of 1 degree
     myservo.write(pos);              // tell servo to go to position in variable 'pos'
-    delay(10);                       // waits 15ms for the servo to reach the position
+    delay(10);                       // waits 15m s for the servo to reach the position
   }
   // delay(1000);
   for (pos = 160; pos >= 20; pos -= 1, x -= 1) { // goes from 180 degrees to 0 degrees
